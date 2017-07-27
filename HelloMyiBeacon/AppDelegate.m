@@ -17,6 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //Ask user's permission of Local Notification.
+    //詢問user本地通知權限
+    UIUserNotificationType type = UIUserNotificationTypeAlert |
+    UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+    
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:type categories:nil];
+    [application registerUserNotificationSettings:settings];
     return YES;
 }
 
